@@ -1,5 +1,14 @@
 // // TODO: Create a function that returns a license badge based on which license is passed in
 // // If there is no license, return an empty string
+const badgeColor = colorText => {
+  if (!colorText) {
+    return ``;
+  }
+  return `
+   ${colorText}
+  `;
+}
+
 const renderLicenseBadge = licenseText => {
   if (!licenseText) {
     return ''; 
@@ -7,10 +16,11 @@ const renderLicenseBadge = licenseText => {
 
   return `
   ## License
-  [![License: ${licenseText.license}](https://img.shields.io/badge/license-${licenseText.license}-${licenseText.color}.svg)]
-  (http://opensource.org/licenses/${licenseText.license})
+  ![License: ${licenseText}(https://img.shields.io/badge/license-${licenseText}-${badgeColor()}.svg)
+  (http://opensource.org/licenses/${licenseText})
   `;
 }
+
 
 const renderTests = testsText => {
   if (!testsText) {

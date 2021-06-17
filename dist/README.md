@@ -1,7 +1,7 @@
-# Ashley's Readme Generator
+# kkwegvw
 
   ## Description
-  a tool that dynamically create's README's
+  kavorhv
 
   ## Table of Contents
 
@@ -11,25 +11,25 @@
   * [License](#license)
   
   ## Installation
-  You must install node.js, fs, and npm inquirer
+  lajsvowerl
   
   ## Usuage
-  Anyone who needs to create a README for their repositories
+  alkvhorw
   
   ## Credits
-  Ashley Ryan, Rutgers Bootcamp, Google searches!
+  iogvaheiorg
   
   
   ## License
-  [![License: undefined](https://img.shields.io/badge/license-undefined-undefined.svg)]
-  (http://opensource.org/licenses/undefined)
+  ![License: ISC(https://img.shields.io/badge/license-ISC-.svg)
+  (http://opensource.org/licenses/ISC)
   
  
   ## Features
-  Inquirer for user input, license choice, badge color choice, generated readme file to include
+  rebarebr
   
   ## Contributing
-  Ashley Ryan and Arya
+  bsertgbe
 
   
   ## Tests
