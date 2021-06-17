@@ -11,7 +11,7 @@ const questions = () => {
   return inquirer.prompt([
     {
       type: 'input',
-      name: 'project-title',
+      name: 'title',
       message: 'What is your project title? (Required)',
       validate: nameInput => {
         if (nameInput) {
@@ -31,24 +31,6 @@ const questions = () => {
           return true;
         } else {
           console.log('Please enter your project description!');
-          return false;
-        }
-      }
-    },
-    {
-      type: 'confirm',
-      name: 'contentConfirm',
-      message: 'Would you like to include a table of contents?',
-      default: true
-    },
-    {
-      type: 'input',
-      name: 'table-of-contents',
-      message: 'generate table of contents?',
-      when: ({ contentConfirm }) => {
-        if (contentConfirm) {
-          return true;
-        } else {
           return false;
         }
       }
@@ -151,37 +133,27 @@ const questions = () => {
       }
     }
   ])
-
-    .then(readmeData => {
-      // portfolioData.questions.push(readmeData);
-    });
 };
 
-promptUser().then(answers => console.log(answers));
-
-
 // TODO: Create a function to write README file
-fs.writeToFile(('./dist/README.md', data), err => {
+const writeFile = questions => {
+  fs.writeFile('./dist/README.md', questions, (err) => {
   if (err) throw new Error(err);
 
   console.log('README complete. Checkout out README.md to see output');
 });
+};
 
 // TODO: Create a function to initialize app
 function init() {
-  return inquirer.promptUser(questions);
-
-  // use inquirer ask questions (activity 2 from monday class)
-  // call generateMarkdown Function - which will return a string
-  // call writeToFile function pass to it a file name and the string returned by the generateMarkdown function
+  questions()
+  .then(answers => markdownFile(answers))
+  .then(generatedReadme => writeFile('README.md', generatedReadme))
+  .catch(err => {
+    console.log(err);
+  });
 };
 
 
 // Function call to initialize app
-init()
-  .then(data => generateMarkdown(data))
-  .then(generatedReadme => writeToFile('README.md', generatedReadme))
-  .catch(err => {
-    console.log(err);
-  });
-
+init();

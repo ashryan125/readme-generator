@@ -38,59 +38,40 @@
 
 // TODO: Create a function to generate markdown for README
 
-function generateMarkdown(data) {
-  return `# ${data.title}
-  # ${project-title}
+function generateMarkdown(answers) {
+  return `# ${answers.title}
 
   ## Description
-
-  ${data.description}
+  ${answers.description}
 
   ## Table of Contents
-  ${table-of-contents}
-  
+
   * [Installation](#installation)
   * [Usage](#usage)
   * [Credits](#credits)
   * [License](#license)
   
-  
   ## Installation
-  ${data.installation}
-  
+  ${answers.installation}
   
   ## Usuage
-  ${data.usuage}
-  
+  ${answers.usuage}
   
   ## Credits
-  ${data.credits}
-  
+  ${answers.credits}
   
   ## License
-  ${license}
-  [![License: ${data.license}](https://img.shields.io/badge/license-${data.license}-${data.color}.svg)]
-  
-  ---
-    
-  ## Badges
-  
-  ${renderLicenseBadge(data.license)}
-
-
-  (http://opensource.org/licenses/${data.license})
-  
+  [![License: ${answers.license}](https://img.shields.io/badge/license-${answers.license}-${answers.color}.svg)]
+  (http://opensource.org/licenses/${answers.license})
+ 
   ## Features
-  ${data.features}
-  
+  ${answers.features}
   
   ## Contributing
-  ${data.contributing}
+  ${answers.contributing}
 
-  
   ## Tests
-  ${data.tests}
-    
+  ${answers.tests}
 `;
 }
 
