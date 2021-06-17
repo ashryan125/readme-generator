@@ -1,40 +1,40 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-const renderLicenseBadge = license => {
-  if (!license) {
-    return '';
-  }
+// // TODO: Create a function that returns a license badge based on which license is passed in
+// // If there is no license, return an empty string
+// const renderLicenseBadge = license => {
+//   if (!license) {
+//     return '## kevin;s ${license}';  // generate markdown for the license
+//   }
 
-  return `
-   // license badge
-  `;
-}
+//   return `
+//    // https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
+//   `;
+// }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// // TODO: Create a function that returns the license link
+// // If there is no license, return an empty string
 
-const renderLicenseLink = license => {
-  if (!license) {
-    return '';
-  }
+// const renderLicenseLink = license => {
+//   if (!license) {
+//     return '';
+//   }
 
-  return `
-   [License Link](https://www.${link}.com)
-  `;
-}
+//   return `
+//    [License Link](https://www.${link}.com)
+//   `;
+// }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// // TODO: Create a function that returns the license section of README
+// // If there is no license, return an empty string
 
-const renderLicenseSection = license => {
-  if (!license) {
-    return '';
-  }
+// const renderLicenseSection = license => {
+//   if (!license) {
+//     return '';
+//   }
 
-  return `
-   // license section
-  `;
-}
+//   return `
+//    // license section
+//   `;
+// }
 
 // TODO: Create a function to generate markdown for README
 
@@ -44,7 +44,7 @@ function generateMarkdown(data) {
 
   ## Description
 
-  ${description}
+  ${data.description}
 
   ## Table of Contents
   ${table-of-contents}
@@ -56,39 +56,40 @@ function generateMarkdown(data) {
   
   
   ## Installation
-  ${installation}
+  ${data.installation}
   
   
   ## Usuage
-  ${usuage}
+  ${data.usuage}
   
   
   ## Credits
-  ${credits}
+  ${data.credits}
   
   
   ## License
   ${license}
-  
+  [![License: ${data.license}](https://img.shields.io/badge/license-${data.license}-${data.color}.svg)]
   
   ---
     
   ## Badges
-  ${badges}
   
-  ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-  
+  ${renderLicenseBadge(data.license)}
+
+
+  (http://opensource.org/licenses/${data.license})
   
   ## Features
-  ${features}
+  ${data.features}
   
   
   ## Contributing
-  ${contributing}
+  ${data.contributing}
 
   
   ## Tests
-  ${tests}
+  ${data.tests}
     
 `;
 }

@@ -6,12 +6,7 @@ const fs = require('fs');
 const markdownFile = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const promptUser = readmeData => {
-
-  // If there's no 'questions' array, create one
-  if (!questions) {
-    questions = [];
-  };
+const questions = () => {
 
   return inquirer.prompt([
     {
@@ -88,12 +83,37 @@ const promptUser = readmeData => {
       default: true
     },
     {
-      // unsure of license parameters
-      // badges to automatically populate based off license selection
       type: 'list',
       name: 'license',
       message: 'Which license do you want to include?',
-      choices: [],
+      choices: ["ISC", "MIT", "Mozilla", "Open"],
+      validate: nameInput => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please choose a license');
+        }
+      },
+      when: ({ confirmLicense }) => {
+        if (confirmLicense) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      type: "list",
+      name: "color",
+      message: "Chose the color for your license badge.",
+      choices: ["red", "blue", "green", "yellow"],
+      validate: nameInput => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please choose a badge color');
+        }
+      },
       when: ({ confirmLicense }) => {
         if (confirmLicense) {
           return true;
@@ -133,7 +153,7 @@ const promptUser = readmeData => {
   ])
 
     .then(readmeData => {
-      // portfolioData.projects.push(readmeData);
+      // portfolioData.questions.push(readmeData);
     });
 };
 
@@ -148,7 +168,20 @@ fs.writeToFile(('./dist/README.md', data), err => {
 });
 
 // TODO: Create a function to initialize app
-function init() { }
+function init() {
+  return inquirer.promptUser(questions);
+
+  // use inquirer ask questions (activity 2 from monday class)
+  // call generateMarkdown Function - which will return a string
+  // call writeToFile function pass to it a file name and the string returned by the generateMarkdown function
+};
+
 
 // Function call to initialize app
-init();
+init()
+  .then(data => generateMarkdown(data))
+  .then(generatedReadme => writeToFile('README.md', generatedReadme))
+  .catch(err => {
+    console.log(err);
+  });
+
