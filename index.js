@@ -133,11 +133,12 @@ const questions = () => {
       }
     }
   ])
+  // .then(answers => writeFile('./README.md', markdownFile(answers)));
 };
 
 // TODO: Create a function to write README file
-const writeFile = questions => {
-  fs.writeFile('./dist/README.md', questions, (err) => {
+const writeFile = fileContent => {
+  fs.writeFile('./dist/README.md', fileContent, (err) => {
   if (err) throw new Error(err);
 
   console.log('README complete. Checkout out README.md to see output');
@@ -148,11 +149,12 @@ const writeFile = questions => {
 function init() {
   questions()
   .then(answers => markdownFile(answers))
-  .then(generatedReadme => writeFile('README.md', generatedReadme))
+  .then(generatedReadme => writeFile(generatedReadme))
   .catch(err => {
     console.log(err);
   });
 };
+
 
 
 // Function call to initialize app
