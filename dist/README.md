@@ -1,7 +1,7 @@
-# regregre
+# Ashley's Readme Generator
 
   ## Description
-  geatgstregh
+  a tool that dynamically create's README's
 
   ## Table of Contents
 
@@ -11,23 +11,27 @@
   * [License](#license)
   
   ## Installation
-  ehstrhtrhtr
+  You must install node.js, fs, and npm inquirer
   
   ## Usuage
-  awregreger
+  Anyone who needs to create a README for their repositories
   
   ## Credits
-  gethstrhtrh
+  Ashley Ryan, Rutgers Bootcamp, Google searches!
+  
   
   ## License
   [![License: undefined](https://img.shields.io/badge/license-undefined-undefined.svg)]
   (http://opensource.org/licenses/undefined)
+  
  
   ## Features
-  egssrehreh
+  Inquirer for user input, license choice, badge color choice, generated readme file to include
   
   ## Contributing
-  areger
+  Ashley Ryan and Arya
 
+  
   ## Tests
   undefined
+  
