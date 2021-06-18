@@ -5,10 +5,12 @@ const badgeColor = colorText => {
     return ``;
   }
   return `
-   ${colorText}
-  `;
+  ${colorText} + "?style=for-the-badge&logo=appveyor)"
+  `
 }
 
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
 const renderLicenseBadge = licenseText => {
   if (!licenseText) {
     return ''; 
@@ -16,10 +18,26 @@ const renderLicenseBadge = licenseText => {
 
   return `
   ## License
-  ![License: ${licenseText}(https://img.shields.io/badge/license-${licenseText}-${badgeColor()}.svg)
-  (http://opensource.org/licenses/${licenseText})
+  ![License: ${licenseText}](https://img.shields.io/badge/${licenseText}-License-
+  
+  http://opensource.org/licenses/${licenseText}
   `;
 }
+
+// // TODO: Create a function that returns the license section of README
+// // If there is no license, return an empty string
+// const renderLicenseSection = licenseText => {
+//   if (!licenseText) {
+//     return ''; 
+//   }
+
+//   return `
+//   ## License
+//   ![License: ${renderLicenseBadge(licenseText.)}](https://img.shields.io/badge/${licenseText}-License-${badgeColor()}?style=for-the-badge&logo=appveyor)
+  
+//   http://opensource.org/licenses/${licenseText}
+//   `;
+// }
 
 
 const renderTests = testsText => {
@@ -28,7 +46,7 @@ const renderTests = testsText => {
   }
   return `
   ## Tests
-  ${testsText.tests}
+  ${testsText}
   `;
 }
 

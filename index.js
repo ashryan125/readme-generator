@@ -88,7 +88,7 @@ const questions = () => {
       type: "list",
       name: "color",
       message: "Chose the color for your license badge.",
-      choices: ["red", "blue", "green", "yellow"],
+      choices: ["red", "blue", "green", "yellow", "orange", "lightgrey"],
       validate: nameInput => {
         if (nameInput) {
           return true;
