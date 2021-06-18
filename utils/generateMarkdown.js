@@ -5,8 +5,8 @@ const badgeColor = colorText => {
     return ``;
   }
   return `
-  ${colorText} + "?style=for-the-badge&logo=appveyor)"
-  `
+   ${colorText}
+  `;
 }
 
 // TODO: Create a function that returns the license link
@@ -18,7 +18,7 @@ const renderLicenseBadge = licenseText => {
 
   return `
   ## License
-  ![License: ${licenseText}](https://img.shields.io/badge/${licenseText}-License-
+  ![License: ${licenseText}](https://img.shields.io/badge/${licenseText}-License-${badgeColor(licenseText.color)}?style=for-the-badge&logo=appveyor)
   
   http://opensource.org/licenses/${licenseText}
   `;
