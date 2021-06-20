@@ -131,6 +131,35 @@ const questions = () => {
           return false;
         }
       }
+    },
+    {
+      type: 'input',
+      name: 'username',
+      message: 'Enter your Github username (Required)',
+      validate: nameInput => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('You must enter your Github username');
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Enter your email address (Required)',
+      validate: nameInput => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('You must enter your email address');
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'instructions',
+      message: 'Enter instuctions on how to reach you for any user questions'
     }
   ])
   // .then(answers => writeFile('./README.md', markdownFile(answers)));
@@ -139,20 +168,20 @@ const questions = () => {
 // TODO: Create a function to write README file
 const writeFile = fileContent => {
   fs.writeFile('./dist/README.md', fileContent, (err) => {
-  if (err) throw new Error(err);
+    if (err) throw new Error(err);
 
-  console.log('README complete. Checkout out README.md to see output');
-});
+    console.log('README complete. Checkout out README.md to see output');
+  });
 };
 
 // TODO: Create a function to initialize app
 function init() {
   questions()
-  .then(answers => markdownFile(answers))
-  .then(generatedReadme => writeFile(generatedReadme))
-  .catch(err => {
-    console.log(err);
-  });
+    .then(answers => markdownFile(answers))
+    .then(generatedReadme => writeFile(generatedReadme))
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 

@@ -50,6 +50,7 @@ const generateMarkdown = answers => {
   * [Usage](#usage)
   * [Credits](#credits)
   * [License](#license)
+  * [Questions](#questions)
   
   ## Installation
   ${answers.installation}
@@ -72,6 +73,13 @@ const generateMarkdown = answers => {
   ${answers.contributing}
 
   ${renderTests(answers.tests)}
+
+  ## Questions
+  ${answers.username}
+
+  ${answers.email}
+  
+  ${answers.instructions}
 `;
 }
 
