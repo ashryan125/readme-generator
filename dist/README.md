@@ -1,7 +1,7 @@
-# wdqw
+# ashley
 
   ## Description
-  dwqdw
+  ashley description\
 
   ## Table of Contents
 
@@ -11,25 +11,23 @@
   * [License](#license)
   
   ## Installation
-  qwdqw
+  istlall it
   
   ## Usuage
-  
+  using it
   
   ## Credits
-  
-  
+  meeeee
   
   ## License
-  ![License: Mozilla](https://img.shields.io/badge/Mozilla-License-green?style=for-the-badge&logo=appveyor)
+  ![License: Open](https://img.shields.io/badge/Open-License-blue?style=for-the-badge&logo=appveyor)
   
-  http://opensource.org/licenses/Mozilla
-  
+  [Click here for Open license details](https://opensource.org/licenses/Open)
  
   ## Features
-  
+  features
   
   ## Contributing
-  
+  asshleey and google
 
   

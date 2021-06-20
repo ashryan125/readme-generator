@@ -58,12 +58,12 @@ const questions = () => {
       name: 'credits',
       message: 'Who should be getting credit for this project?'
     },
-    {
-      type: 'confirm',
-      name: 'confirmLicense',
-      message: 'Do you want to include a project license?',
-      default: true
-    },
+    // {
+    //   type: 'confirm',
+    //   name: 'confirmLicense',
+    //   message: 'Do you want to include a project license?',
+    //   default: true
+    // },
     {
       type: 'list',
       name: 'license',
@@ -76,13 +76,13 @@ const questions = () => {
           console.log('Please choose a license');
         }
       },
-      when: ({ confirmLicense }) => {
-        if (confirmLicense) {
-          return true;
-        } else {
-          return false;
-        }
-      }
+      // when: ({ confirmLicense }) => {
+      //   if (confirmLicense) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }
     },
     {
       type: "list",
@@ -96,13 +96,13 @@ const questions = () => {
           console.log('Please choose a badge color');
         }
       },
-      when: ({ confirmLicense }) => {
-        if (confirmLicense) {
-          return true;
-        } else {
-          return false;
-        }
-      }
+      // when: ({ confirmLicense }) => {
+      //   if (confirmLicense) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }
     },
     {
       type: 'input',

@@ -1,43 +1,29 @@
 // // TODO: Create a function that returns a license badge based on which license is passed in
 // // If there is no license, return an empty string
-const badgeColor = colorText => {
-  if (!colorText) {
-    return ``;
-  }
-  return `
-   ${colorText}
-  `;
-}
+// const badgeColor = colorText => {
+//   if (!colorText) {
+//     return "";
+//   }
+//   return 
+//    console.log(colorText)
+//   ;
+// }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-const renderLicenseBadge = licenseText => {
-  if (!licenseText) {
-    return ''; 
-  }
-
-  return `
-  ## License
-  ![License: ${licenseText}](https://img.shields.io/badge/${licenseText}-License-${badgeColor(licenseText.color)}?style=for-the-badge&logo=appveyor)
-  
-  http://opensource.org/licenses/${licenseText}
-  `;
-}
-
-// // TODO: Create a function that returns the license section of README
+// // TODO: Create a function that returns the license link
 // // If there is no license, return an empty string
-// const renderLicenseSection = licenseText => {
+// const renderLicenseBadge = licenseText => {
 //   if (!licenseText) {
 //     return ''; 
 //   }
 
 //   return `
 //   ## License
-//   ![License: ${renderLicenseBadge(licenseText.)}](https://img.shields.io/badge/${licenseText}-License-${badgeColor()}?style=for-the-badge&logo=appveyor)
+//   ![License: ${licenseText}](https://img.shields.io/badge/${licenseText}-License-<PLACEHOLDER>?style=for-the-badge&logo=appveyor)
   
 //   http://opensource.org/licenses/${licenseText}
 //   `;
 // }
+
 
 
 const renderTests = testsText => {
@@ -74,7 +60,10 @@ const generateMarkdown = answers => {
   ## Credits
   ${answers.credits}
   
-  ${renderLicenseBadge(answers.license)}
+  ## License
+  ![License: ${answers.license}](https://img.shields.io/badge/${answers.license}-License-${answers.color}?style=for-the-badge&logo=appveyor)
+  
+  [Click here for ${answers.license} license details](https://opensource.org/licenses/${answers.license})
  
   ## Features
   ${answers.features}
